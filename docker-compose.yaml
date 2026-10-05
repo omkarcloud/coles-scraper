@@ -1,0 +1,12 @@
+services:
+  coles-scraper:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # Optional — only when you are NOT on an Australian, New Zealand or US
+      # home / office connection (Coles decides by where the request comes
+      # from): an Australian residential proxy.
+      # - COLES_PROXY=http://user:pass@host:port

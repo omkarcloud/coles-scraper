@@ -1,0 +1,484 @@
+{
+ "product": {
+  "id": 1018067,
+  "name": "Charged Strong Latte Iced Coffee",
+  "brand": "Dare",
+  "description": "DARE CHARGED STRONG LATTE ICED COFFEE 240ML",
+  "size": "240mL",
+  "imageUris": [
+   {
+    "altText": "",
+    "type": "default",
+    "uri": "/1/1018067.jpg"
+   }
+  ],
+  "images": [
+   {
+    "thumb": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067-th.jpg",
+     "description": null
+    },
+    "zoom": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067-zm.jpg",
+     "description": "Product Image of Dare Charged Strong Latte Iced Coffee"
+    },
+    "full": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067.jpg",
+     "description": null
+    }
+   },
+   {
+    "thumb": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_L-th.jpg",
+     "description": "Left side of pack of Dare Charged Strong Latte Iced Coffee"
+    },
+    "zoom": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_L-zm.jpg",
+     "description": "Left side of pack of Dare Charged Strong Latte Iced Coffee"
+    },
+    "full": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_L.jpg",
+     "description": "Left side of pack of Dare Charged Strong Latte Iced Coffee"
+    }
+   },
+   {
+    "thumb": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_R-th.jpg",
+     "description": "Right side of pack of Dare Charged Strong Latte Iced Coffee"
+    },
+    "zoom": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_R-zm.jpg",
+     "description": "Right side of pack of Dare Charged Strong Latte Iced Coffee"
+    },
+    "full": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_R.jpg",
+     "description": "Right side of pack of Dare Charged Strong Latte Iced Coffee"
+    }
+   },
+   {
+    "thumb": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_B-th.jpg",
+     "description": "Back of pack of Dare Charged Strong Latte Iced Coffee"
+    },
+    "zoom": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_B-zm.jpg",
+     "description": "Back of pack of Dare Charged Strong Latte Iced Coffee"
+    },
+    "full": {
+     "path": "/wcsstore/Coles-CAS/images/1/0/1/1018067_B.jpg",
+     "description": "Back of pack of Dare Charged Strong Latte Iced Coffee"
+    }
+   }
+  ],
+  "restrictions": {
+   "retailLimit": 20,
+   "promotionalLimit": 12,
+   "liquorAgeRestrictionFlag": false,
+   "tobaccoAgeRestrictionFlag": false,
+   "delivery": [],
+   "restrictedByOrganisation": false
+  },
+  "availability": true,
+  "availabilityStatus": null,
+  "minGuarantee": null,
+  "merchandiseHeir": {
+   "tradeProfitCentre": "DAIRY",
+   "categoryGroup": "DAIRY",
+   "category": "DY MILK",
+   "subCategory": "FLAVOURED MILK",
+   "className": "ICED COFFEE"
+  },
+  "onlineHeirs": [
+   {
+    "aisle": "Flavoured Milk",
+    "category": "Milk",
+    "subCategory": "Dairy, Eggs & Fridge",
+    "categoryId": "8881800",
+    "aisleId": "8881804",
+    "subCategoryId": "1300"
+   },
+   {
+    "aisle": "Single Cans",
+    "category": "Energy Drinks",
+    "subCategory": "Drinks",
+    "categoryId": "8893442",
+    "aisleId": "8893443",
+    "subCategoryId": "11456"
+   }
+  ],
+  "associatedProductId": null,
+  "continuity": null,
+  "lifestyle": [
+   "GMO Free"
+  ],
+  "countryOfOrigin": {
+   "logoRequired": false,
+   "barcodeRequired": false,
+   "descriptionRequired": true,
+   "country": "New Zealand",
+   "barcodePercentage": 0,
+   "statement": "Made in New Zealand",
+   "description": "Made in New Zealand"
+  },
+  "lastUpdated": "2026-10-05T10:10:12Z",
+  "locations": [
+   {
+    "aisleSide": null,
+    "description": "Aisle information is not available for this product. Please ask a Team Member at $STORE to help you find this product.",
+    "facing": 0,
+    "aisle": null,
+    "order": 9999,
+    "shelf": null
+   }
+  ],
+  "additionalInfo": [
+   {
+    "title": "Ingredients",
+    "description": "Brewed Coffee (92%) (Water, Coffee (5%)), Milk Powder, Sugar, Flavours, Salt."
+   },
+   {
+    "title": "Allergen",
+    "description": "Contains Milk, Phenylalanine"
+   },
+   {
+    "title": "Dimensions",
+    "description": "134.00 x 53.00 x 53.00 mm"
+   },
+   {
+    "title": "Preparation instructions",
+    "description": "Ready To Drink: Serve chilled"
+   },
+   {
+    "title": "Usage instructions",
+    "description": "Serve Chilled"
+   },
+   {
+    "title": "Storage instructions",
+    "description": "Do not store above 30 degrees. Once open, refrigerate and consume within 24 hours."
+   }
+  ],
+  "excludeFromSubstitution": false,
+  "brandDetails": {
+   "id": 4240740604,
+   "name": "Dare",
+   "seoToken": "dare"
+  },
+  "collectableCampaign": "",
+  "disclaimers": null,
+  "internalDescription": "",
+  "longDescription": "Turns out it's easier to catch lightning in a can with the new Dare Charged.<br /><br />Available in three delicious flavours, Strong Latte, Mocha and Salted Caramel Latte.<br /><br />^240 mL of this product has 2.5 times the caffeine that's in a 250 mL cup of instant coffee, which contains 80 mg of caffeine.&nbsp;<li>A big caffeine kick naturally powered from 100% Arabica coffee</li><br><li>All Beans No Bull</li><br>",
+  "nutrition": {
+   "title": "Nutritional information",
+   "servingsPerPackage": "1.00",
+   "servingSize": "240ml",
+   "dailyIntakeDisclaimer": "*Percentage Daily (%DI) Intakes are based on an average adult diet of 8700 kJ. Your daily intakes may be higher or lower depending on your energy needs.",
+   "breakdown": [
+    {
+     "title": "Per Serving",
+     "subtitle": "Average quantity per serving",
+     "disclaimer": null,
+     "nutrients": [
+      {
+       "nutrient": "Energy",
+       "value": "510 kJ",
+       "dailyIntakeInfo": "(6.0% DI)",
+       "nutrientDisplayOrder": "1.000"
+      },
+      {
+       "nutrient": "Energy (Cal)",
+       "value": "101 Cal",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "3.000"
+      },
+      {
+       "nutrient": "Protein",
+       "value": "12.0 g",
+       "dailyIntakeInfo": "(24.0% DI)",
+       "nutrientDisplayOrder": "4.000"
+      },
+      {
+       "nutrient": "Fat - Total",
+       "value": "1.5 g",
+       "dailyIntakeInfo": "(2.0% DI)",
+       "nutrientDisplayOrder": "5.000"
+      },
+      {
+       "nutrient": "Fat - Saturated",
+       "value": "0.9 g",
+       "dailyIntakeInfo": "(4.0% DI)",
+       "nutrientDisplayOrder": "5.100"
+      },
+      {
+       "nutrient": "Carbohydrate",
+       "value": "14.7 g",
+       "dailyIntakeInfo": "(5.0% DI)",
+       "nutrientDisplayOrder": "7.000"
+      },
+      {
+       "nutrient": "Sugars - Total",
+       "value": "13.8 g",
+       "dailyIntakeInfo": "(15.0% DI)",
+       "nutrientDisplayOrder": "7.100"
+      },
+      {
+       "nutrient": "Dietary Fibre",
+       "value": "0.0 g",
+       "dailyIntakeInfo": "(0% DI)",
+       "nutrientDisplayOrder": "8.000"
+      },
+      {
+       "nutrient": "Sodium",
+       "value": "147 mg",
+       "dailyIntakeInfo": "(6.0% DI)",
+       "nutrientDisplayOrder": "9.000"
+      },
+      {
+       "nutrient": "Caffeine",
+       "value": "200 mg",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "11.000"
+      }
+     ]
+    },
+    {
+     "title": "Per 100g/ml",
+     "subtitle": "Average quantity per 100g (or 100ml)",
+     "disclaimer": null,
+     "nutrients": [
+      {
+       "nutrient": "Energy",
+       "value": "170 kJ",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "1.000"
+      },
+      {
+       "nutrient": "Energy (Cal)",
+       "value": "42 Cal",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "3.000"
+      },
+      {
+       "nutrient": "Protein",
+       "value": "4.0 g",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "4.000"
+      },
+      {
+       "nutrient": "Fat - Total",
+       "value": "0.5 g",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "5.000"
+      },
+      {
+       "nutrient": "Fat - Saturated",
+       "value": "0.3 g",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "5.100"
+      },
+      {
+       "nutrient": "Carbohydrate",
+       "value": "4.9 g",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "7.000"
+      },
+      {
+       "nutrient": "Sugars - Total",
+       "value": "4.6 g",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "7.100"
+      },
+      {
+       "nutrient": "Dietary Fibre",
+       "value": "0.0 g",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "8.000"
+      },
+      {
+       "nutrient": "Sodium",
+       "value": "49 mg",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "9.000"
+      },
+      {
+       "nutrient": "Caffeine",
+       "value": "84 mg",
+       "dailyIntakeInfo": null,
+       "nutrientDisplayOrder": "11.000"
+      }
+     ]
+    }
+   ]
+  },
+  "nutritionalClaims": [
+   "Peanut free",
+   "Seafood free",
+   "Sesame free",
+   "Gluten free",
+   "Soy free",
+   "Egg free",
+   "GMO free"
+  ],
+  "pricing": {
+   "now": 2.02,
+   "was": 4.05,
+   "saveAmount": 2.03,
+   "saveStatement": "save $2.03",
+   "unit": {
+    "quantity": 1,
+    "ofMeasureQuantity": 1,
+    "ofMeasureUnits": "L",
+    "price": 8.42,
+    "ofMeasureType": null,
+    "isWeighted": false,
+    "isIncremental": false
+   },
+   "comparable": "$8.42/ 1L",
+   "promotionType": "SPECIAL",
+   "onlineSpecial": false,
+   "multiBuyPromotion": null,
+   "priceDescription": "1/2 Price",
+   "savePercent": 50,
+   "specialType": "PERCENT_OFF",
+   "offerDescription": null
+  },
+  "gtin": "9310232962085",
+  "variations": {
+   "total": 1,
+   "byVarieties": [
+    {
+     "id": 1018577,
+     "name": "Charged Mocha",
+     "brand": "Dare",
+     "description": "DARE CHARGED MOCHA LATTE ICED COFFEE 240ML",
+     "size": "240mL",
+     "imageUris": [
+      {
+       "altText": "",
+       "type": "default",
+       "uri": "/1/1018577.jpg"
+      }
+     ],
+     "images": [
+      {
+       "thumb": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577-th.jpg",
+        "description": null
+       },
+       "zoom": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577-zm.jpg",
+        "description": "Product Image of Dare Charged Mocha"
+       },
+       "full": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577.jpg",
+        "description": null
+       }
+      },
+      {
+       "thumb": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_L-th.jpg",
+        "description": "Left side of pack of Dare Charged Mocha"
+       },
+       "zoom": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_L-zm.jpg",
+        "description": "Left side of pack of Dare Charged Mocha"
+       },
+       "full": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_L.jpg",
+        "description": "Left side of pack of Dare Charged Mocha"
+       }
+      },
+      {
+       "thumb": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_R-th.jpg",
+        "description": "Right side of pack of Dare Charged Mocha"
+       },
+       "zoom": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_R-zm.jpg",
+        "description": "Right side of pack of Dare Charged Mocha"
+       },
+       "full": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_R.jpg",
+        "description": "Right side of pack of Dare Charged Mocha"
+       }
+      },
+      {
+       "thumb": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_B-th.jpg",
+        "description": "Back of pack of Dare Charged Mocha"
+       },
+       "zoom": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_B-zm.jpg",
+        "description": "Back of pack of Dare Charged Mocha"
+       },
+       "full": {
+        "path": "/wcsstore/Coles-CAS/images/1/0/1/1018577_B.jpg",
+        "description": "Back of pack of Dare Charged Mocha"
+       }
+      }
+     ],
+     "restrictions": {
+      "retailLimit": 20,
+      "promotionalLimit": 12,
+      "liquorAgeRestrictionFlag": false,
+      "tobaccoAgeRestrictionFlag": false,
+      "delivery": []
+     },
+     "availability": true,
+     "availabilityType": "InStoreAndOnline",
+     "availabilityStatus": null,
+     "merchandiseHeir": {
+      "tradeProfitCentre": "DAIRY",
+      "categoryGroup": "DAIRY",
+      "category": "DY MILK",
+      "subCategory": "FLAVOURED MILK",
+      "className": "ICED COFFEE"
+     },
+     "onlineHeirs": [
+      {
+       "aisle": "Flavoured Milk",
+       "category": "Milk",
+       "subCategory": "Dairy, Eggs & Fridge",
+       "categoryId": "8881800",
+       "aisleId": "8881804",
+       "subCategoryId": "1300"
+      },
+      {
+       "aisle": "Single Cans",
+       "category": "Energy Drinks",
+       "subCategory": "Drinks",
+       "categoryId": "8893442",
+       "aisleId": "8893443",
+       "subCategoryId": "11456"
+      }
+     ],
+     "associatedProductId": null,
+     "continuity": null,
+     "pricing": {
+      "now": 2.02,
+      "was": 4.05,
+      "saveAmount": 2.03,
+      "saveStatement": "save $2.03",
+      "unit": {
+       "quantity": 1,
+       "ofMeasureQuantity": 1,
+       "ofMeasureUnits": "L",
+       "price": 8.42,
+       "ofMeasureType": null,
+       "isWeighted": false,
+       "isIncremental": false
+      },
+      "comparable": "$8.42/ 1L",
+      "promotionType": "SPECIAL",
+      "onlineSpecial": false,
+      "multiBuyPromotion": null,
+      "priceDescription": "1/2 Price",
+      "savePercent": 50,
+      "specialType": "PERCENT_OFF",
+      "offerDescription": null
+     }
+    }
+   ],
+   "bySizes": []
+  }
+ }
+}

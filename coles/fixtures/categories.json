@@ -1,0 +1,225 @@
+{
+ "productCategories": {
+  "excludedCategoryIds": [
+   "17490"
+  ],
+  "catalogGroupView": [
+   {
+    "id": "1300",
+    "level": 1,
+    "name": "Dairy, Eggs & Fridge",
+    "originalName": "Dairy, Eggs & Fridge",
+    "productCount": 2003,
+    "seoToken": "dairy-eggs-fridge",
+    "type": "CATALOG",
+    "subType": "CORE",
+    "catalogGroupView": [
+     {
+      "id": "8881800",
+      "level": 2,
+      "name": "Milk",
+      "originalName": "Milk",
+      "productCount": 174,
+      "seoToken": "milk",
+      "type": "CATALOG",
+      "subType": "CORE",
+      "catalogGroupView": [
+       {
+        "id": "8881804",
+        "level": 3,
+        "name": "Flavoured Milk",
+        "originalName": "Flavoured Milk",
+        "productCount": 83,
+        "seoToken": "flavoured-milk",
+        "type": "CATALOG",
+        "subType": "CORE"
+       },
+       {
+        "id": "8881801",
+        "level": 3,
+        "name": "Full Cream Milk",
+        "originalName": "Full Cream Milk",
+        "productCount": 23,
+        "seoToken": "full-cream-milk",
+        "type": "CATALOG",
+        "subType": "CORE"
+       }
+      ]
+     },
+     {
+      "id": "8915804",
+      "level": 2,
+      "name": "Yoghurt",
+      "originalName": "Yoghurt",
+      "productCount": 258,
+      "seoToken": "yoghurt",
+      "type": "CATALOG",
+      "subType": "CORE",
+      "catalogGroupView": [
+       {
+        "id": "8915822",
+        "level": 3,
+        "name": "Single Serve",
+        "originalName": "Single Serve",
+        "productCount": 65,
+        "seoToken": "single-serve",
+        "type": "CATALOG",
+        "subType": "CORE"
+       },
+       {
+        "id": "8915817",
+        "level": 3,
+        "name": "Yoghurt Tubs",
+        "originalName": "Yoghurt Tubs",
+        "productCount": 65,
+        "seoToken": "yoghurt-tubs",
+        "type": "CATALOG",
+        "subType": "CORE"
+       }
+      ]
+     },
+     {
+      "id": "8882200",
+      "level": 2,
+      "name": "Cheese",
+      "originalName": "Cheese",
+      "productCount": 440,
+      "seoToken": "cheese",
+      "type": "CATALOG",
+      "subType": "CORE",
+      "catalogGroupView": [
+       {
+        "id": "8882205",
+        "level": 3,
+        "name": "Cheese Snacks",
+        "originalName": "Cheese Snacks",
+        "productCount": 46,
+        "seoToken": "cheese-snacks",
+        "type": "CATALOG",
+        "subType": "CORE"
+       },
+       {
+        "id": "8882213",
+        "level": 3,
+        "name": "Sliced Cheese",
+        "originalName": "Sliced Cheese",
+        "productCount": 53,
+        "seoToken": "sliced-cheese",
+        "type": "CATALOG",
+        "subType": "CORE"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "8892906",
+    "level": 1,
+    "name": "Bakery",
+    "originalName": "Bakery",
+    "productCount": 618,
+    "seoToken": "bakery",
+    "type": "CATALOG",
+    "subType": "CORE",
+    "catalogGroupView": [
+     {
+      "id": "8892915",
+      "level": 2,
+      "name": "Chilled Cakes & Desserts",
+      "originalName": "Chilled Cakes & Desserts",
+      "productCount": 62,
+      "seoToken": "chilled-cakes-desserts",
+      "type": "CATALOG",
+      "subType": "CORE",
+      "catalogGroupView": [
+       {
+        "id": "8892978",
+        "level": 3,
+        "name": "2 Pack & Individual Serve Desserts",
+        "originalName": "2 Pack & Individual Serve Desserts",
+        "productCount": 20,
+        "seoToken": "2-pack-individual-serve-desserts",
+        "type": "CATALOG",
+        "subType": "CORE"
+       },
+       {
+        "id": "8892980",
+        "level": 3,
+        "name": "Birthday & Celebration Cakes",
+        "originalName": "Birthday & Celebration Cakes",
+        "productCount": 14,
+        "seoToken": "birthday-celebration-cakes",
+        "type": "CATALOG",
+        "subType": "CORE"
+       }
+      ]
+     },
+     {
+      "id": "8893208",
+      "level": 2,
+      "name": "Christmas Bakery",
+      "originalName": "Christmas Bakery",
+      "productCount": 64,
+      "seoToken": "christmas-bakery",
+      "type": "CATALOG",
+      "subType": "CORE",
+      "catalogGroupView": [
+       {
+        "id": "8893211",
+        "level": 3,
+        "name": "Christmas Fruit Cakes",
+        "originalName": "Christmas Fruit Cakes",
+        "productCount": 8,
+        "seoToken": "christmas-fruit-cakes",
+        "type": "CATALOG",
+        "subType": "CORE"
+       },
+       {
+        "id": "8893214",
+        "level": 3,
+        "name": "Christmas Treats",
+        "originalName": "Christmas Treats",
+        "productCount": 26,
+        "seoToken": "christmas-treats",
+        "type": "CATALOG",
+        "subType": "CORE"
+       }
+      ]
+     },
+     {
+      "id": "8892918",
+      "level": 2,
+      "name": "Gluten Free Range",
+      "originalName": "Gluten Free Range",
+      "productCount": 34,
+      "seoToken": "gluten-free-range",
+      "type": "CATALOG",
+      "subType": "CORE",
+      "catalogGroupView": [
+       {
+        "id": "8893002",
+        "level": 3,
+        "name": "All Packaged Bread",
+        "originalName": "All Packaged Bread",
+        "productCount": 18,
+        "seoToken": "all-packaged-bread",
+        "type": "CATALOG",
+        "subType": "CORE"
+       },
+       {
+        "id": "8893000",
+        "level": 3,
+        "name": "Packaged Breakfast Snack",
+        "originalName": "Packaged Breakfast Snack",
+        "productCount": 2,
+        "seoToken": "packaged-breakfast-snack",
+        "type": "CATALOG",
+        "subType": "CORE"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

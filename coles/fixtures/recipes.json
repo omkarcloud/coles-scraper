@@ -1,0 +1,320 @@
+{
+ "searchRecipes": {
+  "page": 1,
+  "pageSize": 2,
+  "noOfResults": 929,
+  "results": [
+   {
+    "id": "463581",
+    "preparationTime": "10",
+    "slug": "honey-soy-chicken-stir-fry_270287",
+    "title": " Honey Soy Chicken Stir Fry",
+    "description": "",
+    "portions": 4,
+    "sourceUrl": "https://www.coles.com.au/recipes-inspiration/recipes/honey-soy-chicken-stirfry",
+    "images": [],
+    "cookingTime": 10,
+    "price": {
+     "total": 15.5,
+     "portion": 4,
+     "consumptionTotal": 7.5,
+     "consumptionPortion": 2
+    },
+    "nutrition": {
+     "calories": 895,
+     "carbohydrates": 46,
+     "fat": 19,
+     "protein": 23,
+     "sugar": 35,
+     "fiber": 355,
+     "updatedAt": "2025-07-30T01:17:09+02:00"
+    },
+    "ingredients": [
+     {
+      "id": "463581_0",
+      "name": "Maggi Honey Soy Stir Fry Recipe Base",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "1.0",
+      "unit": "pack"
+     },
+     {
+      "id": "463581_1",
+      "name": "chicken",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "500.0",
+      "unit": "g"
+     },
+     {
+      "id": "463581_2",
+      "name": "mixed vegetables",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "3.0",
+      "unit": "cups"
+     },
+     {
+      "id": "463581_3",
+      "name": "steamed rice",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "4.0",
+      "unit": "cups"
+     }
+    ],
+    "steps": [
+     {
+      "title": "",
+      "text": "Pull apart the two sachets.",
+      "sortOrder": 1
+     },
+     {
+      "title": "",
+      "text": "In a medium sized bowl, stir the Infusion Pasta through the chicken strips.",
+      "sortOrder": 2
+     },
+     {
+      "title": "",
+      "text": "Heat saucepan or wok over high heat, and add 1 tbsp oil. Add chicken strips onto the pan, and cook for 5 minutes.",
+      "sortOrder": 3
+     },
+     {
+      "title": "",
+      "text": "Add veggies into the pan, stir through and cook for 3 minutes.",
+      "sortOrder": 4
+     },
+     {
+      "title": "",
+      "text": "Pour Finishing Sauce into the pan, stir through and cook for a further 2 minutes.",
+      "sortOrder": 5
+     },
+     {
+      "title": "",
+      "text": "Serve with steamed white rice. Enjoy!",
+      "sortOrder": 6
+     }
+    ],
+    "stores": [],
+    "tags": [],
+    "sourceData": null,
+    "totalTime": 20
+   },
+   {
+    "id": "390808",
+    "preparationTime": "15",
+    "slug": "curtis-stones-stir-fried-rice-noodles-with-chicken-and-vegetables_175178",
+    "title": "Curtis Stone’s stir-fried rice noodles with chicken and vegetables",
+    "description": "",
+    "portions": 4,
+    "sourceUrl": "https://www.coles.com.au/recipes-inspiration/recipes/curtis-stones-stir-fried-rice-noodles-with-chicken-and-vegetables",
+    "images": [
+     {
+      "type": "default",
+      "url": "https://www.coles.com.au/content/dam/coles/inspire-create/auto-thumbnails/curtis-stones-stir-fried-rice-noodles-with-chicken-and-vegetables_480x288.jpg"
+     }
+    ],
+    "cookingTime": 15,
+    "price": {
+     "total": 30.5,
+     "portion": 7.5,
+     "consumptionTotal": 12,
+     "consumptionPortion": 3
+    },
+    "nutrition": {
+     "calories": 453,
+     "carbohydrates": 43,
+     "fat": 16,
+     "protein": 34,
+     "sugar": 5,
+     "fiber": 2,
+     "updatedAt": "2024-04-30T15:02:52+02:00"
+    },
+    "ingredients": [
+     {
+      "id": "390808_0",
+      "name": "Maggi Oyster Sauce",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "0.25",
+      "unit": "cup"
+     },
+     {
+      "id": "390808_1",
+      "name": "Pearl River Bridge Superior Light Soy Sauce",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "2.0",
+      "unit": "tbsp"
+     },
+     {
+      "id": "390808_2",
+      "name": "Lee Kum Kee Chilli & Garlic Sauce",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "1.0",
+      "unit": "tbsp"
+     },
+     {
+      "id": "390808_3",
+      "name": "Erawan Pad Thai Noodles",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "150.0",
+      "unit": "g"
+     },
+     {
+      "id": "390808_4",
+      "name": "olive oil, divided",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "2.0",
+      "unit": "tbsp"
+     },
+     {
+      "id": "390808_5",
+      "name": "Coles RSPCA Approved Chicken Mince",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "500.0",
+      "unit": "g"
+     },
+     {
+      "id": "390808_6",
+      "name": "fresh loose mushrooms, thinly",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "120.0",
+      "unit": "g"
+     },
+     {
+      "id": "390808_7",
+      "name": "carrot, peeled, cut into thin matchstick-size",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "1.0",
+      "unit": "pcs"
+     },
+     {
+      "id": "390808_8",
+      "name": "brown onion, thinly",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "1.0",
+      "unit": "pcs"
+     },
+     {
+      "id": "390808_9",
+      "name": "spring onion, thinly",
+      "subTitle": "",
+      "imageUrl": "",
+      "amount": "1.0",
+      "unit": "pcs"
+     }
+    ],
+    "steps": [
+     {
+      "title": "",
+      "text": "In a small bowl, whisk the oyster sauce, soy sauce, chilli garlic sauce, if using, and 2 tbs water.",
+      "sortOrder": 1
+     },
+     {
+      "title": "",
+      "text": "In a large pot of heavily salted boiling water, cook the noodles for 4-5 mins or until al dente. Rinse the noodles under cold water. Drain.",
+      "sortOrder": 2
+     },
+     {
+      "title": "",
+      "text": "Heat 1 tbs of the oil in a wok or large heavy frying pan over medium-high heat. Add the chicken and cook, without stirring, for 2 mins or until the chicken is well browned on the bottom. Continue cooking, breaking up the chicken into small clusters, for 2-3 mins or until just cooked through. Transfer the chicken to a heatproof bowl and set aside.",
+      "sortOrder": 3
+     },
+     {
+      "title": "",
+      "text": "In the wok over high heat, heat the remaining 1 tbs oil. When the oil is smoking, add the mushrooms, carrot and onion and stir-fry for 2 mins or until the mushrooms are tender. Stir in the cooked chicken and then the sauce mixture. Add the noodles and toss until well combined and heated through.",
+      "sortOrder": 4
+     },
+     {
+      "title": "",
+      "text": "Divide the noodle mixture among 4 serving bowls. Garnish with spring onion and serve immediately.",
+      "sortOrder": 5
+     }
+    ],
+    "stores": [],
+    "tags": [
+     {
+      "id": "8429",
+      "alias": "cook-time|30-mins-or-less",
+      "name": "cook-time|30-mins-or-less"
+     },
+     {
+      "id": "8448",
+      "alias": "meal|savoury",
+      "name": "meal|savoury"
+     },
+     {
+      "id": "8449",
+      "alias": "meal|main",
+      "name": "meal|main"
+     },
+     {
+      "id": "8450",
+      "alias": "meal|dinner",
+      "name": "meal|dinner"
+     },
+     {
+      "id": "8452",
+      "alias": "serving-size|4",
+      "name": "serving-size|4"
+     },
+     {
+      "id": "8454",
+      "alias": "ingredients|protein|chicken",
+      "name": "ingredients|protein|chicken"
+     },
+     {
+      "id": "8455",
+      "alias": "ingredients|vegetables",
+      "name": "ingredients|vegetables"
+     },
+     {
+      "id": "8459",
+      "alias": "meal|snacks",
+      "name": "meal|snacks"
+     },
+     {
+      "id": "8479",
+      "alias": "int_convenience-and-value|int_quick-and-easy",
+      "name": "int_convenience-and-value|int_quick-and-easy"
+     },
+     {
+      "id": "8491",
+      "alias": "ingredients|vegetables|mushroom",
+      "name": "ingredients|vegetables|mushroom"
+     },
+     {
+      "id": "8545",
+      "alias": "int_creator|int_chefs-and-cooks|int_curtis-stone",
+      "name": "int_creator|int_chefs-and-cooks|int_curtis-stone"
+     },
+     {
+      "id": "8566",
+      "alias": "ingredients|vegetables|carrot",
+      "name": "ingredients|vegetables|carrot"
+     },
+     {
+      "id": "8584",
+      "alias": "ingredients|pantry|noodles",
+      "name": "ingredients|pantry|noodles"
+     },
+     {
+      "id": "8633",
+      "alias": "ingredients|protein|chicken-mince",
+      "name": "ingredients|protein|chicken-mince"
+     }
+    ],
+    "sourceData": null,
+    "totalTime": 30
+   }
+  ]
+ }
+}

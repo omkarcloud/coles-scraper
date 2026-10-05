@@ -1,0 +1,46 @@
+{
+ "store": {
+  "id": "COL:584",
+  "name": "Coles Burwood East",
+  "address": {
+   "state": "VIC",
+   "suburb": "Burwood East",
+   "addressLine": "Burwood Hwy & Blackburn Rd",
+   "postcode": "3151"
+  },
+  "position": {
+   "latitude": -37.853148,
+   "longitude": 145.148918
+  },
+  "brand": {
+   "name": "Coles Supermarkets",
+   "storeFinderId": 2,
+   "id": "COL"
+  },
+  "phone": "(03) 9847 8300",
+  "isTrading": true,
+  "services": [],
+  "hours": {
+   "today": {
+    "time": "24 hours",
+    "holidayReason": null,
+    "isOpen": true
+   },
+   "schedule": [
+    {
+     "daysOfWeek": "Mon-Sun",
+     "time": "12am - 12am"
+    }
+   ],
+   "exceptions": []
+  },
+  "collectionPoints": {
+   "results": [
+    {
+     "id": "0584CC0584",
+     "type": "CONCIERGE"
+    }
+   ]
+  }
+ }
+}

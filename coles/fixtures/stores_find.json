@@ -1,0 +1,154 @@
+{
+ "stores": {
+  "results": [
+   {
+    "distance": 0.072,
+    "store": {
+     "id": "LQR:2209",
+     "name": "Liquorland Carrington St (Cellars)",
+     "address": {
+      "state": "NSW",
+      "suburb": "Sydney",
+      "addressLine": "60 Carrington Street",
+      "postcode": "2000"
+     },
+     "position": {
+      "latitude": -33.866718,
+      "longitude": 151.206425
+     },
+     "brand": {
+      "name": "Liquorland",
+      "storeFinderId": 3,
+      "id": "LQR"
+     },
+     "phone": "(02) 9121 7825",
+     "isTrading": true,
+     "services": [],
+     "hours": {
+      "today": {
+       "time": "Tuesday from 9am to 9pm",
+       "holidayReason": null,
+       "isOpen": false
+      }
+     },
+     "nextDoorStores": {
+      "results": [
+       {
+        "store": {
+         "id": "LQR:2213",
+         "name": "Liquorland York St (Cellars)",
+         "brand": {
+          "id": "LQR",
+          "storeFinderId": 3
+         }
+        }
+       }
+      ]
+     }
+    }
+   },
+   {
+    "distance": 0.173,
+    "store": {
+     "id": "COL:840",
+     "name": "Coles Central Wynyard Express",
+     "address": {
+      "state": "NSW",
+      "suburb": "Sydney",
+      "addressLine": "Wynyard St & Carrington St",
+      "postcode": "2000"
+     },
+     "position": {
+      "latitude": -33.865729,
+      "longitude": 151.206146
+     },
+     "brand": {
+      "name": "Coles Supermarkets",
+      "storeFinderId": 2,
+      "id": "COL"
+     },
+     "phone": "(02) 7231 7900",
+     "isTrading": true,
+     "services": [],
+     "hours": {
+      "today": {
+       "time": "Today from 6am to 10pm",
+       "holidayReason": null,
+       "isOpen": true
+      }
+     },
+     "nextDoorStores": {
+      "results": [
+       {
+        "store": {
+         "id": "LQR:2209",
+         "name": "Liquorland Carrington St (Cellars)",
+         "brand": {
+          "id": "LQR",
+          "storeFinderId": 3
+         }
+        }
+       },
+       {
+        "store": {
+         "id": "LQR:2213",
+         "name": "Liquorland York St (Cellars)",
+         "brand": {
+          "id": "LQR",
+          "storeFinderId": 3
+         }
+        }
+       }
+      ]
+     }
+    }
+   },
+   {
+    "distance": 0.275,
+    "store": {
+     "id": "LQR:2213",
+     "name": "Liquorland York St (Cellars)",
+     "address": {
+      "state": "NSW",
+      "suburb": "Sydney",
+      "addressLine": "46 York Street",
+      "postcode": "2000"
+     },
+     "position": {
+      "latitude": -33.869483,
+      "longitude": 151.206254
+     },
+     "brand": {
+      "name": "Liquorland",
+      "storeFinderId": 3,
+      "id": "LQR"
+     },
+     "phone": "(02) 9121 7824",
+     "isTrading": true,
+     "services": [],
+     "hours": {
+      "today": {
+       "time": "Tuesday from 9am to 9pm",
+       "holidayReason": null,
+       "isOpen": false
+      }
+     },
+     "nextDoorStores": {
+      "results": [
+       {
+        "store": {
+         "id": "LQR:2209",
+         "name": "Liquorland Carrington St (Cellars)",
+         "brand": {
+          "id": "LQR",
+          "storeFinderId": 3
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  ]
+ }
+}

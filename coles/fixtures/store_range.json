@@ -1,0 +1,151 @@
+{
+ "storeRange": [
+  {
+   "stateCode": "ACT",
+   "products": [
+    {
+     "productId": "8150288",
+     "name": "Full Cream Milk",
+     "brand": "Coles",
+     "size": "3L",
+     "stores": [
+      {
+       "storeId": "5784",
+       "storeName": "Amaroo"
+      },
+      {
+       "storeId": "779",
+       "storeName": "Belconnen"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stateCode": "NSW",
+   "products": [
+    {
+     "productId": "8150288",
+     "name": "Full Cream Milk",
+     "brand": "Coles",
+     "size": "3L",
+     "stores": [
+      {
+       "storeId": "693",
+       "storeName": "Albury"
+      },
+      {
+       "storeId": "8750",
+       "storeName": "Alstonville"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stateCode": "QLD",
+   "products": [
+    {
+     "productId": "8150288",
+     "name": "Full Cream Milk",
+     "brand": "Coles",
+     "size": "3L",
+     "stores": [
+      {
+       "storeId": "4494",
+       "storeName": "Aitkenvale"
+      },
+      {
+       "storeId": "4516",
+       "storeName": "Albany Creek"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stateCode": "SA",
+   "products": [
+    {
+     "productId": "8150288",
+     "name": "Full Cream Milk",
+     "brand": "Coles",
+     "size": "3L",
+     "stores": [
+      {
+       "storeId": "4942",
+       "storeName": "Aberfoyle Park"
+      },
+      {
+       "storeId": "4188",
+       "storeName": "Adelaide Market Sq"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stateCode": "TAS",
+   "products": [
+    {
+     "productId": "8150288",
+     "name": "Full Cream Milk",
+     "brand": "Coles",
+     "size": "3L",
+     "stores": [
+      {
+       "storeId": "7647",
+       "storeName": "Bridgewater"
+      },
+      {
+       "storeId": "7541",
+       "storeName": "Burnie"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stateCode": "VIC",
+   "products": [
+    {
+     "productId": "8150288",
+     "name": "Full Cream Milk",
+     "brand": "Coles",
+     "size": "3L",
+     "stores": [
+      {
+       "storeId": "7808",
+       "storeName": "Airport West"
+      },
+      {
+       "storeId": "530",
+       "storeName": "Altona"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stateCode": "WA",
+   "products": [
+    {
+     "productId": "8150288",
+     "name": "Full Cream Milk",
+     "brand": "Coles",
+     "size": "3L",
+     "stores": [
+      {
+       "storeId": "364",
+       "storeName": "Albany"
+      },
+      {
+       "storeId": "478",
+       "storeName": "Albany (Orana)"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

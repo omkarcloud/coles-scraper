@@ -1,0 +1,164 @@
+{
+ "productsInfo": {
+  "count": 2,
+  "invalidProductIds": [
+   "9999999"
+  ],
+  "results": [
+   {
+    "id": 8150288,
+    "name": "Full Cream Milk",
+    "brand": "Coles",
+    "description": "COLES FULL CREAM MILK 3L",
+    "internalDescription": "",
+    "size": "3L",
+    "imageUris": [
+     {
+      "altText": "",
+      "type": "default",
+      "uri": "/8/8150288.jpg"
+     }
+    ],
+    "restrictions": {
+     "retailLimit": 20,
+     "promotionalLimit": 12,
+     "liquorAgeRestrictionFlag": false,
+     "tobaccoAgeRestrictionFlag": false,
+     "delivery": [
+      "REMOTE SERVICE",
+      "OVN"
+     ],
+     "restrictedByOrganisation": false
+    },
+    "continuity": null,
+    "collectableCampaign": "",
+    "lastUpdated": "2026-10-05T10:10:13Z",
+    "availability": true,
+    "availabilityType": "InStoreAndOnline",
+    "availabilityStatus": null,
+    "merchandiseHeir": {
+     "tradeProfitCentre": "DAIRY",
+     "categoryGroup": "DAIRY",
+     "category": "DY MILK",
+     "subCategory": "WHOLE WHITE",
+     "className": "WHOLE 3-3.9L"
+    },
+    "onlineHeirs": [
+     {
+      "aisle": "Full Cream Milk",
+      "category": "Milk",
+      "subCategory": "Dairy, Eggs & Fridge",
+      "categoryId": "8881800",
+      "aisleId": "8881801",
+      "subCategoryId": "1300"
+     }
+    ],
+    "pricing": {
+     "now": 4.95,
+     "was": null,
+     "saveAmount": null,
+     "saveStatement": null,
+     "unit": {
+      "quantity": 1,
+      "ofMeasureQuantity": 1,
+      "ofMeasureUnits": "L",
+      "price": 1.65,
+      "ofMeasureType": null,
+      "isWeighted": false,
+      "isIncremental": false
+     },
+     "comparable": "$1.65/ 1L",
+     "promotionType": null,
+     "onlineSpecial": false,
+     "multiBuyPromotion": null,
+     "priceDescription": null,
+     "savePercent": null,
+     "specialType": null,
+     "offerDescription": null
+    },
+    "minGuarantee": null
+   },
+   {
+    "id": 409499,
+    "name": "Bananas",
+    "brand": "Coles",
+    "description": "BANANAS: PER KG",
+    "internalDescription": "",
+    "size": "approx. 170g",
+    "imageUris": [
+     {
+      "altText": "",
+      "type": "default",
+      "uri": "/4/409499.jpg"
+     }
+    ],
+    "restrictions": {
+     "retailLimit": 50,
+     "promotionalLimit": 50,
+     "liquorAgeRestrictionFlag": false,
+     "tobaccoAgeRestrictionFlag": false,
+     "delivery": [
+      "REMOTE SERVICE",
+      "OVN"
+     ],
+     "restrictedByOrganisation": false
+    },
+    "continuity": null,
+    "collectableCampaign": "",
+    "lastUpdated": "2026-10-05T10:10:13Z",
+    "availability": true,
+    "availabilityType": "InStoreAndOnline",
+    "availabilityStatus": null,
+    "merchandiseHeir": {
+     "tradeProfitCentre": "FRESH PROD",
+     "categoryGroup": "FRUIT",
+     "category": "BANANAS",
+     "subCategory": "REGULAR BANANAS",
+     "className": "REGULAR"
+    },
+    "onlineHeirs": [
+     {
+      "aisle": "Bananas",
+      "category": "Fruit",
+      "subCategory": "Fruit & Vegetables",
+      "categoryId": "1302",
+      "aisleId": "1700",
+      "subCategoryId": "2100"
+     },
+     {
+      "aisle": "Fruit",
+      "category": "Best of Spring",
+      "subCategory": "Fruit & Vegetables",
+      "categoryId": "699689408",
+      "aisleId": "699689418",
+      "subCategoryId": "2100"
+     }
+    ],
+    "pricing": {
+     "now": 0.77,
+     "was": null,
+     "saveAmount": null,
+     "saveStatement": null,
+     "unit": {
+      "quantity": 0.17,
+      "ofMeasureQuantity": 1,
+      "ofMeasureUnits": "kg",
+      "price": 4.5,
+      "ofMeasureType": null,
+      "isWeighted": true,
+      "isIncremental": false
+     },
+     "comparable": "$4.50/ 1kg",
+     "promotionType": null,
+     "onlineSpecial": false,
+     "multiBuyPromotion": null,
+     "priceDescription": null,
+     "savePercent": null,
+     "specialType": null,
+     "offerDescription": null
+    },
+    "minGuarantee": null
+   }
+  ]
+ }
+}
