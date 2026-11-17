@@ -31,11 +31,13 @@ Intentionally dropped upstream fields (and why):
   recipes: stores, sourceData      always empty / null
 """
 import html
-import math
 import re
 from datetime import datetime, timezone
 
 from coles import refs
+from scraper_utils.values import as_dict, as_list, number
+from scraper_utils.text import clean as text
+from scraper_utils.dates import iso_utc
 
 PAGE_SIZE = 48
 # The search gateway serves at most 104 pages (4,992 products) of any listing
@@ -44,22 +46,6 @@ MAX_PAGES = 104
 
 
 # ---- small helpers ---------------------------------------------------------------
-
-def as_dict(value):
-    return value if isinstance(value, dict) else {}
-
-
-def as_list(value):
-    return value if isinstance(value, list) else []
-
-
-def text(value):
-    """Trimmed, entity-decoded string; None for empty / non-strings."""
-    if value is None or isinstance(value, (dict, list, bool)):
-        return None
-    value = html.unescape(str(value)).replace("\xa0", " ")
-    value = " ".join(value.split())
-    return value or None
 
 
 _BREAKS = re.compile(r"<\s*(br|li|/p|/li|/div|/h\d)\b[^>]*>", re.I)
@@ -75,21 +61,6 @@ def plain(value):
     return "\n".join(line for line in lines if line) or None
 
 
-def number(value):
-    """int/float, or None. Whole floats collapse to int (1.0 -> 1)."""
-    if isinstance(value, bool) or value is None:
-        return None
-    if isinstance(value, (int, float)):
-        if isinstance(value, float) and (math.isnan(value) or math.isinf(value)):
-            return None
-        return int(value) if float(value).is_integer() else value
-    try:
-        parsed = float(str(value).replace(",", "").strip())
-    except ValueError:
-        return None
-    return int(parsed) if parsed.is_integer() else parsed
-
-
 def price(value):
     """A positive amount, or None (Coles sends 0 for "no was-price")."""
     value = number(value)
@@ -99,19 +70,6 @@ def price(value):
 def integer(value):
     value = number(value)
     return int(value) if value is not None else None
-
-
-def iso_utc(value):
-    """2026-10-05T20:47:24.561+11:00 -> 2026-10-05T09:47:24Z."""
-    if not value or not isinstance(value, str):
-        return None
-    try:
-        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
-    except ValueError:
-        return None
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=timezone.utc)
-    return parsed.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def snake(label):
@@ -242,11 +200,16 @@ def aisle_locations(raw):
         aisle = text(loc.get("aisle"))
         if not aisle:
             continue
-        out.append({
+        entry = {
             "aisle": aisle,
             "aisle_side": text(loc.get("aisleSide")),
             "shelf": text(loc.get("shelf")),
-        })
+        }
+        coords = as_dict(loc.get("indoorCoordinates"))
+        x, y = number(coords.get("productX")), number(coords.get("productY"))
+        if x is not None and y is not None:
+            entry["map_pin"] = {"x": x, "y": y}
+        out.append(entry)
     return out
 
 

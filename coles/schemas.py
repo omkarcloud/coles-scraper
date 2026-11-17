@@ -8,7 +8,7 @@ ONE param per input (tripadvisor QueryOrLinkField convention, never a sibling
 `url`/`id` pair):
 
     product    8150288 | coles.com.au/product/coles-full-cream-milk-3l-8150288
-    products   up to 20 of the above, comma-separated
+    products   up to 100 of the above, comma-separated
     store      584 | COL:584 | coles.com.au/find-stores/coles/vic/burwood-east-584
                (store routes also take liquor stores: LQR:6083)
     category   1300 | dairy-eggs-fridge/milk | coles.com.au/browse/dairy-eggs-fridge/milk
@@ -140,11 +140,16 @@ class BrandProductsSchema(_ListingSchema):
 class ProductSchema(BaseSchema):
     product = ProductRefField()
     store = StoreRefField()
+    include_aisle_LVBu4e2eaX1X4ra1 = fields.Boolean(load_default=False)
+    # with the aisle flag: return the bare store map + map_pin_pixel/ratio instead of a pinned image
+    unpin_images = fields.Boolean(load_default=False)
 
 
 class BulkProductsSchema(BaseSchema):
     products = ProductListField()
     store = StoreRefField()
+    include_aisle_LVBu4e2eaX1X4ra1 = fields.Boolean(load_default=False)
+    unpin_images = fields.Boolean(load_default=False)
 
 
 class StockistsSchema(BaseSchema):

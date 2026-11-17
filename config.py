@@ -47,3 +47,24 @@ COLES_CLEARANCE_TTL = 15 * 60
 def coles_proxy():
     """Proxy for every request (None = direct)."""
     return os.environ.get("COLES_PROXY") or None
+
+
+# ---- added by the sync: defaults for a direct run ----
+COLES_APP_SUBSCRIPTION_KEY = 'dd6ae58532d743978508555a59a199ac'
+COLES_APP_TOKEN_TTL = 600
+COLES_INSTORE_MAP_TTL = 7 * 86400
+COLES_INSTORE_NOMAP_TTL = 24 * 3600
+COLES_MAP_PLAN_TTL = 6 * 3600
+COLES_TOKEN_URL = None
+STORE_MAP_CDN_BASE = None
+STORE_MAP_MAX_PX = None
+STORE_MAP_PLAN_MAX_PX = None
+STORE_MAP_S3_BUCKET = None
+STORE_MAP_S3_REGION = None
+def burst_slots(share):
+    return share
+
+
+def coles_gateway_exit():
+    return None
+

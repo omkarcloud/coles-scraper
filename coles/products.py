@@ -22,9 +22,29 @@ import json
 import config
 from coles import categories as tree
 from coles import fetch, parsers, refs
+from coles import store_map
 
 _PUBLIC_SORT = {token: name for name, token in refs.SORTS.items()}
-MAX_BULK = 20
+MAX_BULK = 100
+
+
+def _attach_map_images(store, product, record, unpin=False):
+    """Best-effort: add the map fields (map_image_url = the floor plan with the product pinned,
+    or the bare plan when `unpin` -- the `unpin_images` flag -- plus map_image_width/height,
+    map_pin_pixel and map_pin_ratio for client-side pinning) to each aisle location that has a
+    map pin. Never raises -- a map failure leaves the aisle data."""
+    for loc in (record.get("aisle_locations") or []):
+        pin = loc.get("map_pin")
+        if not pin:
+            continue
+        info = store_map.map_info(store, product, pin.get("x"), pin.get("y"), label=loc.get("aisle"),
+                                  pinned=not unpin)
+        if info:
+            loc.update(info)
+# Coles' GraphQL GetProductsInfo validates the productIds array server-side
+# and rejects more than 35 ids ("Argument Validation Error"). We split a
+# basket into parallel chunks comfortably under that cap and merge the rows.
+BULK_CHUNK = 30
 
 
 # ---- listing core --------------------------------------------------------------------
@@ -164,16 +184,23 @@ def brand_products(brand, page=1, sort_by=None, special_type=None, dietary=None,
 
 # ---- single products ------------------------------------------------------------------
 
-def details(product, store=None):
+def details(product, store=None, include_aisle_LVBu4e2eaX1X4ra1=False, unpin_images=False):
     """Full product record: GraphQL `product` (GTIN, nutrition, variations)
     plus the BFF record (UNSPSC code, live stock), fetched in parallel. The
-    BFF half is best-effort."""
+    BFF half is best-effort. The real in-store aisle + map pin are filled from
+    the app gateway only when the opt-in flag is set (and COLES_TOKEN_URL is
+    configured); otherwise the response is unchanged."""
     store = store or config.COLES_DEFAULT_STORE_ID
-    main, extra = fetch.run_parallel([
+    want_aisle = bool(include_aisle_LVBu4e2eaX1X4ra1) and bool(config.COLES_TOKEN_URL)
+    calls = [
         lambda: fetch.gql("GetProductDetails", {"storeId": f"COL:{store}", "productId": product,
                                                 "useV2NipAndAllergens": True}),
         lambda: fetch.bff(f"/products/{product}", {"storeId": store}, allow_empty=True),
-    ], workers=2)
+    ]
+    if want_aisle:
+        calls.append(lambda: fetch.app_product(product, store))
+    results = fetch.run_parallel(calls, workers=len(calls))
+    main, extra = results[0], results[1]
     extra_record = extra[1] if extra[0] == "ok" else None
     record = (main[1] or {}).get("product") if main[0] == "ok" else None
     if not record and not extra_record:
@@ -183,16 +210,46 @@ def details(product, store=None):
         if failure is None or isinstance(failure, (fetch.ColesNotFound, fetch.ColesBadRequest)):
             raise fetch.ColesNotFound(f"Coles product {product} does not exist.")
         raise failure
-    return parsers.product_details(record, store, extra_record)
+    out = parsers.product_details(record, store, extra_record)
+    if want_aisle:
+        app = results[2]
+        if app[0] == "ok" and app[1]:
+            out["aisle_locations"] = parsers.aisle_locations(parsers.as_dict(app[1]).get("locations"))
+            _attach_map_images(store, product, out, unpin=bool(unpin_images))
+    return out
 
 
-def bulk(products, store=None):
-    """Up to MAX_BULK products in one upstream call (price, stock, category
-    for a basket or a watch list)."""
+def bulk(products, store=None, include_aisle_LVBu4e2eaX1X4ra1=False, unpin_images=False):
+    """Up to MAX_BULK products (price, stock, category for a basket or a
+    watch list). Coles caps one GetProductsInfo call at 35 ids, so larger
+    baskets go out as parallel chunks and are merged back in input order. The
+    real in-store aisle + map pin are filled from the app gateway (one call per
+    sku, best-effort) only when the opt-in flag is set and COLES_TOKEN_URL is
+    configured."""
     store = store or config.COLES_DEFAULT_STORE_ID
-    data = fetch.gql("GetProductsInfo", {"productIds": products, "brandedStoreId": f"COL:{store}"})
-    info = data.get("productsInfo") or {}
-    cards = {card["id"]: card for card in (parsers.product_card(row, store) for row in parsers.as_list(info.get("results")))}
+    sid = f"COL:{store}"
+    chunks = [products[i:i + BULK_CHUNK] for i in range(0, len(products), BULK_CHUNK)]
+    cards = {}
+    for status, value in fetch.run_parallel(
+            [lambda c=c: fetch.gql("GetProductsInfo", {"productIds": c, "brandedStoreId": sid})
+             for c in chunks]):
+        if status == "error":
+            raise value
+        for row in parsers.as_list((value.get("productsInfo") or {}).get("results")):
+            card = parsers.product_card(row, store)
+            cards[card["id"]] = card
+    if include_aisle_LVBu4e2eaX1X4ra1 and config.COLES_TOKEN_URL:
+        for pid, (status, value) in zip(products, fetch.run_parallel(
+                [lambda p=p: fetch.app_product(p, store) for p in products])):
+            if status == "ok" and value and int(pid) in cards:
+                cards[int(pid)]["aisle_locations"] = parsers.aisle_locations(
+                    parsers.as_dict(value).get("locations"))
+        # render + cache each product's pinned map (best-effort, bounded by the render semaphore)
+        pending = [lambda pid=pid: _attach_map_images(store, pid, cards[int(pid)], unpin=bool(unpin_images))
+                   for pid in products
+                   if int(pid) in cards and cards[int(pid)].get("aisle_locations")]
+        if pending:
+            fetch.run_parallel(pending)
     ordered = [cards[int(pid)] for pid in products if int(pid) in cards]
     missing = [int(pid) for pid in products if int(pid) not in cards]
     return {
@@ -203,9 +260,11 @@ def bulk(products, store=None):
     }
 
 
-def alternatives(product, store=None):
+def alternatives(product, store=None, include_aisle_LVBu4e2eaX1X4ra1=False, unpin_images=False):
     """Coles' substitutes for a product (what it offers when the product is
-    out of stock)."""
+    out of stock). The route shares ProductSchema with details, so the aisle
+    / map flags arrive here too: accepted and ignored (without them in the
+    signature every call was a TypeError, a 500)."""
     store = store or config.COLES_DEFAULT_STORE_ID
     data = fetch.bff("/products/recommendations/alternatives", method="POST",
                      body={"storeId": store, "productIds": [product]})

@@ -10,6 +10,7 @@ import pytest
 
 from coles import fetch, parsers, refs, schemas
 from schema_fields import load_query
+from scraper_utils.testing import hosted_only
 
 FIXTURES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fixtures")
 
@@ -297,7 +298,7 @@ def test_search_schema():
     (schemas.ProductSearchSchema, {"query": "milk", "url": "x"}),
     (schemas.ProductSearchSchema, {"query": "milk", "store": "LQR:6083"}),
     (schemas.ProductSchema, {"product": "abc"}),
-    (schemas.BulkProductsSchema, {"products": ",".join(str(1000 + i) for i in range(21))}),
+    (schemas.BulkProductsSchema, {"products": ",".join(str(1000 + i) for i in range(101))}),
     (schemas.CategoryProductsSchema, {}),
     (schemas.StoreSearchSchema, {"location": "x"}),
     (schemas.StoreSearchSchema, {"location": "Bondi", "brand": "aldi"}),
@@ -347,6 +348,98 @@ def test_error_message():
     assert fetch._error_message("nope") is None
 
 
+# ---- gateway exit in front of the residential exit ------------------------------------
+
+class _Jar:
+    def __init__(self):
+        self.cleared = 0
+
+    def clear(self):
+        self.cleared += 1
+
+
+class _FakeSession:
+    """A session whose answers are scripted; records what was asked."""
+
+    def __init__(self, answers):
+        self.answers, self.calls, self.cookies, self.closed = list(answers), [], _Jar(), False
+
+    def request(self, method, url, **kwargs):
+        self.calls.append((method, url, kwargs))
+        answer = self.answers.pop(0)
+        if isinstance(answer, Exception):
+            raise answer
+        return answer
+
+    def close(self):
+        self.closed = True
+
+
+def _wire(monkeypatch, gateway_exit, gateway_answers, residential_answers):
+    """fetch on fake sessions: the gateway one is built by egress.exit_session,
+    the residential one by fetch._new_session(config.coles_proxy())."""
+    import threading
+    gateway, residential, built = _FakeSession(gateway_answers), _FakeSession(residential_answers), []
+    monkeypatch.setattr(fetch, "_local", threading.local())
+    monkeypatch.setattr(fetch, "_clearance", None)
+    monkeypatch.setattr(fetch.config, "COLES_GATEWAY_EXIT", gateway_exit)
+    monkeypatch.setattr(fetch.config, "COLES_BROWSER_FALLBACK", False)
+    monkeypatch.setattr(fetch.config, "coles_proxy", lambda: "http://residential-au")
+    monkeypatch.setattr(fetch.egress, "exit_session", lambda exit, impersonate=None: built.append(exit) or gateway)
+    monkeypatch.setattr(fetch, "_new_session", lambda proxy, cookies=None: built.append(proxy) or residential)
+    return gateway, residential, built
+
+
+_JSON = '{"noOfResults": 3}'
+_CHALLENGE = "<html><iframe>Request unsuccessful. Incapsula incident ID: 1-2</iframe></html>"
+
+
+@hosted_only
+def test_bff_rides_the_gateway_and_graphql_the_residential_exit(monkeypatch):
+    gateway, residential, built = _wire(monkeypatch, "gateway:au",
+                                        [_Resp(200, _JSON, "application/json")] * 2,
+                                        [_Resp(200, '{"data": {}}', "application/json")])
+    assert fetch._send("GET", fetch.BFF + "/products/search", params={"searchTerm": "milk"}).text == _JSON
+    assert fetch._send("GET", fetch.SITE + "/", headers={"accept": "text/html"}, api=False).text == _JSON
+    assert built == ["gateway:au"] and not residential.calls           # one gateway session, no residential exit opened
+    assert gateway.cookies.cleared == 2                              # stateless: no Incapsula cookie is carried over
+    api_headers, page_headers = gateway.calls[0][2]["headers"], gateway.calls[1][2]["headers"]
+    assert api_headers["accept-language"] == fetch.egress.accept_language("gateway:au") and api_headers["accept-language"].startswith("en-AU")
+    assert api_headers["ocp-apim-subscription-key"] and page_headers == {"accept": "text/html"}
+    fetch._send("POST", fetch.GRAPHQL, body={"query": "{__typename}"})
+    assert len(gateway.calls) == 2 and len(residential.calls) == 1 and built == ["gateway:au", "http://residential-au"]
+    assert residential.calls[0][2]["headers"]["accept-language"] == fetch.API_HEADERS["accept-language"]
+
+
+@hosted_only
+def test_a_refused_gateway_falls_back_to_the_residential_attempts(monkeypatch):
+    gateway, residential, built = _wire(monkeypatch, "gateway:au",
+                                        [_Resp(403, _CHALLENGE), RuntimeError("gateway 504")],
+                                        [_Resp(200, _JSON, "application/json")] * 2)
+    assert fetch._send("GET", fetch.BFF + "/products/1", params={"storeId": "584"}).text == _JSON     # challenged
+    assert fetch._send("GET", fetch.BFF + "/products/2", params={"storeId": "584"}).text == _JSON     # transport error
+    assert len(gateway.calls) == 2 and len(residential.calls) == 2      # ONE gateway try per call, then the old path
+    assert built == ["gateway:au", "http://residential-au"]                 # the sticky residential exit is kept between calls
+    assert gateway.closed and fetch._local.gateway is None              # a gateway session that raised is dropped
+
+
+@hosted_only
+def test_gateway_block_and_residential_blocks_still_raise_blocked(monkeypatch):
+    gateway, residential, _ = _wire(monkeypatch, "gateway:au", [_Resp(403, _CHALLENGE)],
+                                    [_Resp(200, _CHALLENGE)] * fetch.config.COLES_MAX_ATTEMPTS)
+    with pytest.raises(fetch.ColesBlocked):
+        fetch._send("GET", fetch.BFF + "/products/search")
+    assert len(gateway.calls) == 1 and len(residential.calls) == fetch.config.COLES_MAX_ATTEMPTS
+
+
+@hosted_only
+@pytest.mark.parametrize("knob", [None, "", "au", "datacenter"])
+def test_no_gateway_knob_keeps_every_call_on_the_residential_exit(monkeypatch, knob):
+    gateway, residential, built = _wire(monkeypatch, knob, [], [_Resp(200, _JSON, "application/json")])
+    assert fetch._send("GET", fetch.BFF + "/products/search").text == _JSON
+    assert not gateway.calls and built == ["http://residential-au"]
+
+
 def test_documents_are_self_contained():
     import re
     for name, document in fetch.DOCUMENTS.items():
@@ -354,3 +447,35 @@ def test_documents_are_self_contained():
         defined = set(re.findall(r"fragment ([A-Za-z_]+) on", document))
         assert spreads <= defined, f"{name} misses fragments {spreads - defined}"
         assert f"query {name}(" in document
+
+
+# ---- in-store aisle + map pin (app gateway) ----------------------------------------
+
+def test_aisle_locations_with_map_pin():
+    """The app gateway carries indoorCoordinates -> map_pin; placeholder rows
+    (no aisle) are dropped."""
+    locs = [
+        {"aisle": "Aisle 9", "aisleSide": "Left", "shelf": "",
+         "indoorCoordinates": {"productX": 5459.36, "productY": 2213.88}},
+        {"aisle": None, "description": "ask a Team Member at $STORE"},
+    ]
+    assert parsers.aisle_locations(locs) == [
+        {"aisle": "Aisle 9", "aisle_side": "Left", "shelf": None,
+         "map_pin": {"x": 5459.36, "y": 2213.88}}]
+
+
+def test_aisle_locations_website_shape_has_no_pin():
+    """The website GraphQL locations carry no indoorCoordinates -> no map_pin."""
+    assert parsers.aisle_locations([{"aisle": "Aisle 3", "aisleSide": "Right", "shelf": "2"}]) == [
+        {"aisle": "Aisle 3", "aisle_side": "Right", "shelf": "2"}]
+
+
+def test_include_aisle_flag_schema():
+    data, err = load_query(schemas.ProductSchema,
+                           {"product": "4504673", "store": "728", "include_aisle_LVBu4e2eaX1X4ra1": "true"})
+    assert err is None and data["include_aisle_LVBu4e2eaX1X4ra1"] is True
+    data, _ = load_query(schemas.ProductSchema, {"product": "4504673"})
+    assert data["include_aisle_LVBu4e2eaX1X4ra1"] is False
+    data, _ = load_query(schemas.BulkProductsSchema,
+                         {"products": "4504673,329607", "include_aisle_LVBu4e2eaX1X4ra1": "1"})
+    assert data["include_aisle_LVBu4e2eaX1X4ra1"] is True
